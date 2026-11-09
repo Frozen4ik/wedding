@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Свадьба в гончарной мастерской · Вера и Лёша · 26.12.2026</title>
 
-    <!-- Новые шрифты: Cormorant Garamond + Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -49,7 +48,7 @@
             z-index: 2;
         }
 
-        /* ---------- МЯГКИЕ ПЕРЕХОДЫ МЕЖДУ СЕКЦИЯМИ ---------- */
+        /* ---------- МЯГКИЕ ПЕРЕХОДЫ ---------- */
         .section-fade {
             position: relative;
         }
@@ -67,7 +66,7 @@
             filter: blur(14px);
         }
 
-        /* ---------- ХЕДЕР / ГЕРОЙ НА ВЕСЬ ЭКРАН ---------- */
+        /* ---------- ХЕДЕР ---------- */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -126,7 +125,6 @@
             z-index: 2;
         }
 
-        /* Главный заголовок — серифный, крупный */
         .hero h1 {
             font-family: var(--font-serif);
             font-size: clamp(2.4rem, 6vw, 4.5rem);
@@ -138,7 +136,6 @@
             line-height: 1.1;
         }
 
-        /* Надпись «в гончарную мастерскую» — крупнее */
         .hero .subhead {
             font-family: var(--font-serif);
             font-style: italic;
@@ -162,7 +159,6 @@
             margin-top: 20px;
         }
 
-        /* Имена — очень крупно, с красивым & */
         .hero .names {
             margin-top: 34px;
             font-family: var(--font-serif);
@@ -183,7 +179,7 @@
             transform: translateY(0.04em);
         }
 
-        /* ---------- ВОЛНА ПО НИЗУ ХЕДЕРА ---------- */
+        /* ---------- ВОЛНА ---------- */
         .hero-wave {
             position: absolute;
             left: 0;
@@ -257,7 +253,7 @@
             padding: 10px 0;
         }
 
-        /* ---------- ОБЩИЕ СЕКЦИИ ---------- */
+        /* ---------- СЕКЦИИ ---------- */
         section {
             padding: 70px 0;
             position: relative;
@@ -656,15 +652,16 @@
             margin-bottom: 0;
         }
 
+        /* ИСПРАВЛЕННЫЕ ИКОНКИ В СПИСКЕ — юникод-цветок вместо Font Awesome */
         .alt-list li::before {
-            content: '\f06c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 400;
+            content: '🎁';
             position: absolute;
             left: 0;
-            top: 2px;
-            font-size: 1.05rem;
+            top: 0;
+            font-size: 1.1rem;
             color: #a5633a;
+            font-family: var(--font-sans);
+            line-height: 1.5;
         }
 
         /* ---------- КАРТА ---------- */
@@ -753,239 +750,79 @@
         }
 
         /* ---------- АДАПТИВ ---------- */
-
         @media (min-width: 1400px) {
-            .container {
-                max-width: 1200px;
-            }
+            .container { max-width: 1200px; }
         }
 
         @media (max-width: 1024px) {
-            .hero {
-                padding: 50px 0 130px;
-            }
-
-            .info-card {
-                flex: 1 1 240px;
-            }
-
-            .note-card {
-                flex: 1 1 320px;
-            }
+            .hero { padding: 50px 0 130px; }
+            .info-card { flex: 1 1 240px; }
+            .note-card { flex: 1 1 320px; }
         }
 
         @media (max-width: 900px) and (orientation: landscape) {
-            .hero {
-                min-height: auto;
-                padding: 40px 0 110px;
-            }
-
-            .countdown-wrapper {
-                margin-top: 24px;
-            }
-
-            .hero-wave {
-                height: 70px;
-            }
+            .hero { min-height: auto; padding: 40px 0 110px; }
+            .countdown-wrapper { margin-top: 24px; }
+            .hero-wave { height: 70px; }
         }
 
         @media (max-width: 700px) {
-            .hero {
-                padding: 40px 0 110px;
-            }
-
-            .hero-wave {
-                height: 70px;
-            }
-
-            .hero .date-badge {
-                padding: 10px 24px;
-                letter-spacing: 3px;
-            }
-
-            .section-title {
-                margin-bottom: 30px;
-            }
-
-            .invite-text {
-                padding: 26px 22px;
-            }
-
-            .survey-section {
-                padding: 40px 20px;
-            }
-
-            .btn-survey {
-                padding: 14px 30px;
-            }
-
-            .countdown-item {
-                min-width: 70px;
-                padding: 12px 8px;
-            }
-
-            .countdown-label {
-                font-size: 0.7rem;
-            }
-
-            .countdown {
-                gap: 10px;
-            }
-
-            .program-wrapper {
-                padding: 35px 22px;
-            }
-
-            .timeline {
-                padding-left: 30px;
-            }
-
-            .timeline::before {
-                left: 8px;
-            }
-
-            .timeline-item::before {
-                left: -27px;
-                width: 13px;
-                height: 13px;
-            }
-
-            .note-card {
-                padding: 30px 25px;
-            }
-
-            .slider-btn {
-                width: 42px;
-                height: 42px;
-                font-size: 1rem;
-            }
-
-            .slider-btn.prev {
-                left: 10px;
-            }
-
-            .slider-btn.next {
-                right: 10px;
-            }
-
-            .slide-caption {
-                padding: 35px 20px 14px;
-            }
-
-            .section-fade::after {
-                bottom: -24px;
-                height: 80px;
-            }
+            .hero { padding: 40px 0 110px; }
+            .hero-wave { height: 70px; }
+            .hero .date-badge { padding: 10px 24px; letter-spacing: 3px; }
+            .section-title { margin-bottom: 30px; }
+            .invite-text { padding: 26px 22px; }
+            .survey-section { padding: 40px 20px; }
+            .btn-survey { padding: 14px 30px; }
+            .countdown-item { min-width: 70px; padding: 12px 8px; }
+            .countdown-label { font-size: 0.7rem; }
+            .countdown { gap: 10px; }
+            .program-wrapper { padding: 35px 22px; }
+            .timeline { padding-left: 30px; }
+            .timeline::before { left: 8px; }
+            .timeline-item::before { left: -27px; width: 13px; height: 13px; }
+            .note-card { padding: 30px 25px; }
+            .slider-btn { width: 42px; height: 42px; font-size: 1rem; }
+            .slider-btn.prev { left: 10px; }
+            .slider-btn.next { right: 10px; }
+            .slide-caption { padding: 35px 20px 14px; }
+            .section-fade::after { bottom: -24px; height: 80px; }
         }
 
         @media (max-width: 480px) {
-            .hero {
-                padding: 30px 0 100px;
-            }
-
-            .hero-wave {
-                height: 60px;
-            }
-
-            .countdown-item {
-                min-width: 62px;
-                padding: 10px 6px;
-            }
-
-            .timeline-time {
-                font-size: 0.85rem;
-                padding: 4px 14px;
-            }
-
-            .note-card {
-                padding: 25px 20px;
-            }
-
-            .alt-list li {
-                padding-left: 30px;
-            }
-
-            .gallery-slider {
-                border-width: 4px;
-            }
-
-            .hero-blob {
-                display: none;
-            }
+            .hero { padding: 30px 0 100px; }
+            .hero-wave { height: 60px; }
+            .countdown-item { min-width: 62px; padding: 10px 6px; }
+            .timeline-time { font-size: 0.85rem; padding: 4px 14px; }
+            .note-card { padding: 25px 20px; }
+            .alt-list li { padding-left: 30px; }
+            .gallery-slider { border-width: 4px; }
+            .hero-blob { display: none; }
         }
 
         @media (max-height: 560px) and (orientation: landscape) {
-            .hero {
-                min-height: auto;
-                padding: 30px 0 90px;
-            }
-
-            .hero h1 {
-                font-size: 1.9rem;
-                margin-bottom: 8px;
-            }
-
-            .hero .subhead {
-                font-size: 1.2rem;
-                margin-bottom: 12px;
-            }
-
-            .hero .date-badge {
-                font-size: 1rem;
-                padding: 8px 22px;
-                margin-top: 8px;
-                letter-spacing: 2px;
-            }
-
-            .hero .names {
-                margin-top: 12px;
-                font-size: 1.8rem;
-            }
-
-            .countdown-wrapper {
-                margin-top: 14px;
-            }
-
-            .countdown-title {
-                margin-bottom: 8px;
-                font-size: 0.95rem;
-            }
-
-            .countdown-item {
-                min-width: 56px;
-                padding: 7px 6px;
-            }
-
-            .countdown-number {
-                font-size: 1.25rem;
-            }
-
-            .countdown-label {
-                font-size: 0.6rem;
-                margin-top: 3px;
-            }
-
-            .hero-wave {
-                height: 55px;
-            }
+            .hero { min-height: auto; padding: 30px 0 90px; }
+            .hero h1 { font-size: 1.9rem; margin-bottom: 8px; }
+            .hero .subhead { font-size: 1.2rem; margin-bottom: 12px; }
+            .hero .date-badge { font-size: 1rem; padding: 8px 22px; margin-top: 8px; letter-spacing: 2px; }
+            .hero .names { margin-top: 12px; font-size: 1.8rem; }
+            .countdown-wrapper { margin-top: 14px; }
+            .countdown-title { margin-bottom: 8px; font-size: 0.95rem; }
+            .countdown-item { min-width: 56px; padding: 7px 6px; }
+            .countdown-number { font-size: 1.25rem; }
+            .countdown-label { font-size: 0.6rem; margin-top: 3px; }
+            .hero-wave { height: 55px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .hero-bg,
-            .hero-blob,
-            .gallery-slider {
-                transform: none !important;
-            }
-
-            .slider-track {
-                scroll-behavior: auto;
-            }
+            .hero-bg, .hero-blob, .gallery-slider { transform: none !important; }
+            .slider-track { scroll-behavior: auto; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ХЕДЕР / ГЕРОЙ -->
+    <!-- ХЕДЕР -->
     <header class="hero">
         <div class="hero-bg" id="heroBg"></div>
         <div class="hero-blob b1" id="blob1"></div>
@@ -998,7 +835,6 @@
             <div class="date-badge">26 · 12 · 2026</div>
             <div class="names">Вера <span class="amp">&amp;</span> Лёша</div>
 
-            <!-- ТАЙМЕР -->
             <div class="countdown-wrapper">
                 <div class="countdown-title">До нашего праздника осталось:</div>
                 <div class="countdown" id="countdown">
@@ -1022,7 +858,6 @@
             </div>
         </div>
 
-        <!-- ВОЛНА ПО НИЗУ ХЕДЕРА -->
         <div class="hero-wave" aria-hidden="true">
             <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -1031,10 +866,8 @@
                         <stop offset="100%" stop-color="#f9f3ea" stop-opacity="1"/>
                     </linearGradient>
                 </defs>
-                <path d="M0,70 C180,110 360,20 540,45 C720,70 900,110 1080,85 C1260,60 1380,35 1440,55 L1440,120 L0,120 Z"
-                      fill="url(#waveGrad)"/>
-                <path d="M0,85 C180,115 360,45 540,60 C720,75 900,110 1080,90 C1260,70 1380,55 1440,70 L1440,120 L0,120 Z"
-                      fill="#f9f3ea"/>
+                <path d="M0,70 C180,110 360,20 540,45 C720,70 900,110 1080,85 C1260,60 1380,35 1440,55 L1440,120 L0,120 Z" fill="url(#waveGrad)"/>
+                <path d="M0,85 C180,115 360,45 540,60 C720,75 900,110 1080,90 C1260,70 1380,55 1440,70 L1440,120 L0,120 Z" fill="#f9f3ea"/>
             </svg>
         </div>
     </header>
@@ -1100,7 +933,7 @@
                 <div class="info-card">
                     <i class="fas fa-map-pin"></i>
                     <h3>Место</h3>
-                    <p>Гончарная мастерская «Тёплый ком»<br>г. Москва, ул. Гончарная, д. 12 (вход со двора)</p>
+                    <p>Гончарная мастерская «Наша Мара»<br>г. Минск, ул. Авакяна, д. 21, 4 этаж</p>
                 </div>
                 <div class="info-card">
                     <i class="fas fa-clock"></i>
@@ -1110,7 +943,7 @@
                 <div class="info-card">
                     <i class="fas fa-gift"></i>
                     <h3>Формат</h3>
-                    <p>Творческий вечер с мастер-классом. Будем лепить из глины, пить глинтвейн и радоваться.</p>
+                    <p>Творческий вечер с мастер-классом. Будем лепить из глины, общаться и радоваться.</p>
                 </div>
             </div>
         </div>
@@ -1157,7 +990,7 @@
                     <i class="fas fa-tshirt note-icon"></i>
                     <h3>Дресс-код</h3>
                     <div class="dress-value">Свободный</div>
-                    <p>Будем рады видеть вас в удобной одежде, в которой можно творить. В мастерской прохладно зимой — захватите что-то тёплое.</p>
+                    <p>Будем рады видеть вас в удобной одежде, в которой можно творить. </p>
                 </div>
 
                 <div class="note-card">
@@ -1179,31 +1012,30 @@
         </div>
     </section>
 
-    <!-- КАРТА -->
+    <!-- КАРТА — ОБНОВЛЕНА НА «НАША МАРА», МИНСК, УЛ. АВАКЯНА 21 -->
     <section class="section-fade" style="padding-top: 0;">
         <div class="container">
             <h2 class="section-title">Как добраться</h2>
             <div class="map-wrapper">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.648533%2C55.738665&z=16&pt=37.648533,55.738665,pm2rdm" width="100%" height="400" frameborder="0" allowfullscreen="true" style="border:0; display:block;"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=27.54411%2C53.87737&z=16&pt=27.54411,53.87737,pm2rdm" width="100%" height="400" frameborder="0" allowfullscreen="true" style="border:0; display:block;"></iframe>
             </div>
             <p style="text-align: center; margin-top: 18px; font-size: 1.1rem; color: #6b4a2e;">
-                <i class="fas fa-location-dot" style="margin-right: 8px;"></i>Гончарная мастерская «Тёплый ком» · ул. Гончарная, 12
+                <i class="fas fa-location-dot" style="margin-right: 8px;"></i>Гончарная мастерская «Наша Мара» · г. Минск, ул. Авакяна, 21, 4 этаж
             </p>
         </div>
     </section>
 
-    <!-- ОПРОС -->
+    <!-- ОПРОС — ССЫЛКА НА ЯНДЕКС.ФОРМУ -->
     <section style="padding-top: 20px;">
         <div class="container">
             <div class="survey-section">
                 <h2>Подтвердите присутствие</h2>
                 <p>Пожалуйста, ответьте на несколько вопросов, чтобы мы могли всё организовать наилучшим образом. Это займёт не больше минуты.</p>
-                <!-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШУ GOOGLE ФОРМУ -->
-                <a href="https://forms.google.com/ВАША_ССЫЛКА_НА_ФОРМУ" class="btn-survey" target="_blank" rel="noopener noreferrer">
+                <a href="https://forms.yandex.ru/u/6aedabb2ba5f025bfb6bfb75" class="btn-survey" target="_blank" rel="noopener noreferrer">
                     Заполнить форму <i class="fas fa-arrow-right"></i>
                 </a>
                 <div class="survey-note">
-                    <i class="fas fa-lock" style="margin-right: 6px;"></i>Ссылка ведёт на Google Forms. Пожалуйста, заполните до 15 декабря 2026.
+                    <i class="fas fa-lock" style="margin-right: 6px;"></i>Ссылка ведёт на Яндекс.Форму. Пожалуйста, заполните до 15 декабря 2026.
                 </div>
             </div>
         </div>
@@ -1213,7 +1045,7 @@
     <footer>
         <div class="container">
             <p>С любовью, Вера и Лёша <i class="fas fa-heart"></i></p>
-            <p style="margin-top: 12px; font-size: 0.9rem; opacity: 0.8;">26 декабря 2026 · гончарная мастерская «Тёплый ком»</p>
+            <p style="margin-top: 12px; font-size: 0.9rem; opacity: 0.8;">26 декабря 2026 · гончарная мастерская «Наша Мара»</p>
         </div>
     </footer>
 
