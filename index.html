@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Свадьба в гончарной мастерской · Вера и Лёша · 26.12.2026</title>
+
+    <!-- Новые шрифты: Cormorant Garamond + Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --font-serif: "Cormorant Garamond", "Georgia", serif;
+            --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #f9f3ea;
+            color: #3e2c1b;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ---------- МЯГКИЕ ПЕРЕХОДЫ МЕЖДУ СЕКЦИЯМИ ---------- */
+        .section-fade {
+            position: relative;
+        }
+
+        .section-fade::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -40px;
+            height: 120px;
+            pointer-events: none;
+            z-index: 1;
+            background: radial-gradient(ellipse at center, rgba(249, 243, 234, 0) 0%, rgba(249, 243, 234, 0.55) 55%, rgba(249, 243, 234, 0.95) 100%);
+            filter: blur(14px);
+        }
+
+        /* ---------- ХЕДЕР / ГЕРОЙ НА ВЕСЬ ЭКРАН ---------- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 60px 0 140px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: -80px 0 -80px 0;
+            background: #d9c2a7 url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="%23b38b6d" opacity="0.25"/><circle cx="40" cy="30" r="3" fill="%23b38b6d" opacity="0.2"/><circle cx="25" cy="50" r="2.5" fill="%23b38b6d" opacity="0.25"/><circle cx="52" cy="8" r="1.8" fill="%23b38b6d" opacity="0.18"/></svg>');
+            will-change: transform;
+            z-index: 0;
+        }
+
+        .hero-blob {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            will-change: transform;
+            filter: blur(2px);
+        }
+
+        .hero-blob.b1 {
+            width: 260px;
+            height: 260px;
+            top: -60px;
+            left: -70px;
+            background: radial-gradient(circle, rgba(181, 139, 109, 0.28), transparent 70%);
+        }
+
+        .hero-blob.b2 {
+            width: 340px;
+            height: 340px;
+            bottom: -120px;
+            right: -100px;
+            background: radial-gradient(circle, rgba(165, 99, 58, 0.16), transparent 70%);
+        }
+
+        .hero-blob.b3 {
+            width: 180px;
+            height: 180px;
+            top: 40%;
+            right: 12%;
+            background: radial-gradient(circle, rgba(181, 139, 109, 0.18), transparent 70%);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Главный заголовок — серифный, крупный */
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            font-weight: 500;
+            color: #3e2c1b;
+            text-shadow: 2px 2px 0 rgba(255, 245, 235, 0.6);
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        /* Надпись «в гончарную мастерскую» — крупнее */
+        .hero .subhead {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.6rem, 4.2vw, 3rem);
+            color: #6b4a2e;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .hero .date-badge {
+            display: inline-block;
+            background-color: #3e2c1b;
+            color: #f9f3ea;
+            padding: 14px 36px;
+            border-radius: 60px;
+            font-family: var(--font-sans);
+            font-size: clamp(1.05rem, 2.6vw, 1.6rem);
+            font-weight: 500;
+            letter-spacing: 4px;
+            box-shadow: 0 10px 20px rgba(62, 44, 27, 0.2);
+            margin-top: 20px;
+        }
+
+        /* Имена — очень крупно, с красивым & */
+        .hero .names {
+            margin-top: 34px;
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 6.5vw, 4.2rem);
+            font-weight: 400;
+            color: #5b4636;
+            line-height: 1.15;
+            letter-spacing: 1px;
+        }
+
+        .hero .names .amp {
+            display: inline-block;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 1.15em;
+            color: #a5633a;
+            margin: 0 0.08em;
+            transform: translateY(0.04em);
+        }
+
+        /* ---------- ВОЛНА ПО НИЗУ ХЕДЕРА ---------- */
+        .hero-wave {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            width: 100%;
+            height: 90px;
+            z-index: 1;
+            pointer-events: none;
+            display: block;
+        }
+
+        .hero-wave svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ---------- ТАЙМЕР ---------- */
+        .countdown-wrapper {
+            margin-top: 36px;
+        }
+
+        .countdown-title {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.15rem, 2.6vw, 1.8rem);
+            color: #5b4636;
+            margin-bottom: 18px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 245, 235, 0.85);
+            backdrop-filter: blur(3px);
+            border-radius: 20px;
+            padding: 16px 12px;
+            min-width: 92px;
+            box-shadow: 0 10px 18px rgba(62, 44, 27, 0.12);
+            border: 1px solid #e4d5c4;
+        }
+
+        .countdown-number {
+            font-family: var(--font-sans);
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 600;
+            color: #3e2c1b;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8f735b;
+            margin-top: 8px;
+        }
+
+        .countdown-finished {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 2.2rem;
+            color: #a5633a;
+            padding: 10px 0;
+        }
+
+        /* ---------- ОБЩИЕ СЕКЦИИ ---------- */
+        section {
+            padding: 70px 0;
+            position: relative;
+        }
+
+        section.alt-bg {
+            background: linear-gradient(to bottom, #f9f3ea 0%, #f4ebde 30%, #f4ebde 70%, #f9f3ea 100%);
+        }
+
+        section.alt-bg2 {
+            background: linear-gradient(to bottom, #f9f3ea 0%, #efe2d2 35%, #efe2d2 65%, #f9f3ea 100%);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4.2vw, 3rem);
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            color: #3e2c1b;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #b38b6d;
+            margin: 14px auto 0;
+            border-radius: 3px;
+        }
+
+        /* ---------- ПРИГЛАШЕНИЕ ---------- */
+        .invite-text {
+            font-family: var(--font-sans);
+            font-size: clamp(1rem, 1.7vw, 1.15rem);
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            background: rgba(255, 245, 235, 0.7);
+            padding: 34px 38px;
+            border-radius: 120px 20px 120px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #d9c2a7;
+            line-height: 1.7;
+        }
+
+        .invite-text p {
+            margin-bottom: 16px;
+        }
+
+        .invite-text .signature {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+            color: #a5633a;
+            margin-top: 14px;
+        }
+
+        /* ---------- СЛАЙДЕР ---------- */
+        .gallery-slider {
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 50px 20px 50px 20px;
+            overflow: hidden;
+            border: 6px solid #f3e7d9;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+            background: #e8d9c8;
+            will-change: transform;
+        }
+
+        .slider-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .slider-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: clamp(240px, 45vw, 460px);
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 45px 30px 20px;
+            background: linear-gradient(to top, rgba(62, 44, 27, 0.78), rgba(62, 44, 27, 0));
+            color: #f9f3ea;
+            font-family: var(--font-sans);
+            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+            font-weight: 400;
+            text-align: left;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 2px solid #f3e7d9;
+            background: rgba(62, 44, 27, 0.75);
+            color: #f9f3ea;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+            z-index: 3;
+        }
+
+        .slider-btn:hover {
+            background: #a5633a;
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        .slider-btn.prev {
+            left: 16px;
+        }
+
+        .slider-btn.next {
+            right: 16px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .slider-dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            border: 2px solid #a5633a;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.2s ease;
+        }
+
+        .slider-dot.active {
+            background: #a5633a;
+            transform: scale(1.15);
+        }
+
+        /* ---------- КАРТОЧКИ ---------- */
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: #ffffffd9;
+            backdrop-filter: blur(4px);
+            border-radius: 30px;
+            padding: 32px 26px;
+            flex: 1 1 280px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e4d5c4;
+            text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 38px rgba(0, 0, 0, 0.09);
+        }
+
+        .info-card i {
+            font-size: 2.2rem;
+            color: #a5633a;
+            margin-bottom: 18px;
+        }
+
+        .info-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #3e2c1b;
+        }
+
+        .info-card p {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            color: #5b4636;
+        }
+
+        /* ---------- ПРОГРАММА ---------- */
+        .program-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            background: rgba(255, 245, 235, 0.6);
+            border-radius: 50px 20px 50px 20px;
+            padding: 50px 40px;
+            border: 1px solid #d9c2a7;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 38px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            bottom: 8px;
+            width: 3px;
+            background: linear-gradient(to bottom, #b38b6d, #d9c2a7);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 32px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 6px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #a5633a;
+            border: 3px solid #f9f3ea;
+            box-shadow: 0 0 0 3px #d9c2a7;
+            z-index: 1;
+        }
+
+        .timeline-time {
+            display: inline-block;
+            background: #3e2c1b;
+            color: #f9f3ea;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 5px 18px;
+            border-radius: 40px;
+            margin-bottom: 10px;
+            box-shadow: 0 6px 12px rgba(62, 44, 27, 0.18);
+        }
+
+        .timeline-text {
+            font-family: var(--font-serif);
+            font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+            color: #3e2c1b;
+            font-weight: 500;
+        }
+
+        .timeline-item.highlight .timeline-time {
+            background: #a5633a;
+        }
+
+        .timeline-item.highlight .timeline-text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+            color: #a5633a;
+        }
+
+        /* ---------- ПРИМЕЧАНИЯ ---------- */
+        .notes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .note-card {
+            background: #ffffffd9;
+            backdrop-filter: blur(4px);
+            border-radius: 40px 15px 40px 15px;
+            padding: 40px 35px;
+            flex: 1 1 380px;
+            max-width: 520px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e4d5c4;
+            transition: transform 0.25s ease;
+        }
+
+        .note-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .note-card i.note-icon {
+            font-size: 2.2rem;
+            color: #a5633a;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .note-card h3 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.7rem, 3vw, 2.2rem);
+            font-weight: 600;
+            color: #3e2c1b;
+            margin-bottom: 18px;
+        }
+
+        .note-card .dress-value {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+            color: #a5633a;
+            margin-bottom: 6px;
+        }
+
+        .note-card p {
+            font-family: var(--font-sans);
+            font-size: clamp(0.98rem, 1.6vw, 1.08rem);
+            color: #5b4636;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        .note-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .flowers-ban {
+            display: inline-block;
+            background: #f4e3d7;
+            border: 1px dashed #a5633a;
+            color: #a5633a;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: clamp(0.92rem, 1.6vw, 1.05rem);
+            letter-spacing: 0.5px;
+            padding: 10px 20px;
+            border-radius: 40px;
+            margin: 6px 0 18px;
+        }
+
+        .alt-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.3rem, 2.2vw, 1.55rem);
+            font-weight: 600;
+            color: #3e2c1b;
+            margin: 22px 0 14px;
+        }
+
+        .alt-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .alt-list li {
+            position: relative;
+            padding-left: 34px;
+            margin-bottom: 12px;
+            font-family: var(--font-sans);
+            font-size: clamp(0.96rem, 1.6vw, 1.06rem);
+            color: #5b4636;
+            line-height: 1.5;
+        }
+
+        .alt-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .alt-list li::before {
+            content: '\f06c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 400;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.05rem;
+            color: #a5633a;
+        }
+
+        /* ---------- КАРТА ---------- */
+        .map-wrapper {
+            margin-top: 30px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            border: 6px solid #f3e7d9;
+        }
+
+        /* ---------- ОПРОС ---------- */
+        .survey-section {
+            background: #e8d9c8;
+            border-radius: 80px 20px 80px 20px;
+            padding: 60px 30px;
+            text-align: center;
+            margin-top: 20px;
+            box-shadow: inset 0 0 30px rgba(255, 245, 235, 0.5);
+        }
+
+        .survey-section h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .survey-section p {
+            font-family: var(--font-sans);
+            font-size: clamp(1rem, 1.7vw, 1.15rem);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.65;
+        }
+
+        .btn-survey {
+            display: inline-block;
+            background-color: #3e2c1b;
+            color: #f9f3ea;
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 500;
+            padding: 18px 48px;
+            border-radius: 60px;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 20px rgba(62, 44, 27, 0.3);
+            border: 2px solid #f3e7d9;
+            margin: 10px 0 20px;
+            letter-spacing: 1px;
+        }
+
+        .btn-survey:hover {
+            background-color: #5b4636;
+            box-shadow: 0 16px 28px rgba(62, 44, 27, 0.4);
+            transform: scale(1.02);
+        }
+
+        .btn-survey i {
+            margin-left: 12px;
+        }
+
+        .survey-note {
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            color: #6b4a2e;
+            margin-top: 15px;
+        }
+
+        /* ---------- ФУТЕР ---------- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #8f735b;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            border-top: 1px solid transparent;
+            border-image: linear-gradient(to right, rgba(217,194,167,0), #d9c2a7 50%, rgba(217,194,167,0)) 1;
+            margin-top: 20px;
+        }
+
+        footer i {
+            color: #a5633a;
+            margin: 0 6px;
+        }
+
+        /* ---------- АДАПТИВ ---------- */
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                padding: 50px 0 130px;
+            }
+
+            .info-card {
+                flex: 1 1 240px;
+            }
+
+            .note-card {
+                flex: 1 1 320px;
+            }
+        }
+
+        @media (max-width: 900px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 40px 0 110px;
+            }
+
+            .countdown-wrapper {
+                margin-top: 24px;
+            }
+
+            .hero-wave {
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding: 40px 0 110px;
+            }
+
+            .hero-wave {
+                height: 70px;
+            }
+
+            .hero .date-badge {
+                padding: 10px 24px;
+                letter-spacing: 3px;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .invite-text {
+                padding: 26px 22px;
+            }
+
+            .survey-section {
+                padding: 40px 20px;
+            }
+
+            .btn-survey {
+                padding: 14px 30px;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 12px 8px;
+            }
+
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+
+            .countdown {
+                gap: 10px;
+            }
+
+            .program-wrapper {
+                padding: 35px 22px;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .timeline::before {
+                left: 8px;
+            }
+
+            .timeline-item::before {
+                left: -27px;
+                width: 13px;
+                height: 13px;
+            }
+
+            .note-card {
+                padding: 30px 25px;
+            }
+
+            .slider-btn {
+                width: 42px;
+                height: 42px;
+                font-size: 1rem;
+            }
+
+            .slider-btn.prev {
+                left: 10px;
+            }
+
+            .slider-btn.next {
+                right: 10px;
+            }
+
+            .slide-caption {
+                padding: 35px 20px 14px;
+            }
+
+            .section-fade::after {
+                bottom: -24px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 30px 0 100px;
+            }
+
+            .hero-wave {
+                height: 60px;
+            }
+
+            .countdown-item {
+                min-width: 62px;
+                padding: 10px 6px;
+            }
+
+            .timeline-time {
+                font-size: 0.85rem;
+                padding: 4px 14px;
+            }
+
+            .note-card {
+                padding: 25px 20px;
+            }
+
+            .alt-list li {
+                padding-left: 30px;
+            }
+
+            .gallery-slider {
+                border-width: 4px;
+            }
+
+            .hero-blob {
+                display: none;
+            }
+        }
+
+        @media (max-height: 560px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 30px 0 90px;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+                margin-bottom: 8px;
+            }
+
+            .hero .subhead {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .hero .date-badge {
+                font-size: 1rem;
+                padding: 8px 22px;
+                margin-top: 8px;
+                letter-spacing: 2px;
+            }
+
+            .hero .names {
+                margin-top: 12px;
+                font-size: 1.8rem;
+            }
+
+            .countdown-wrapper {
+                margin-top: 14px;
+            }
+
+            .countdown-title {
+                margin-bottom: 8px;
+                font-size: 0.95rem;
+            }
+
+            .countdown-item {
+                min-width: 56px;
+                padding: 7px 6px;
+            }
+
+            .countdown-number {
+                font-size: 1.25rem;
+            }
+
+            .countdown-label {
+                font-size: 0.6rem;
+                margin-top: 3px;
+            }
+
+            .hero-wave {
+                height: 55px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg,
+            .hero-blob,
+            .gallery-slider {
+                transform: none !important;
+            }
+
+            .slider-track {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ХЕДЕР / ГЕРОЙ -->
+    <header class="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-blob b1" id="blob1"></div>
+        <div class="hero-blob b2" id="blob2"></div>
+        <div class="hero-blob b3" id="blob3"></div>
+
+        <div class="container">
+            <h1>Приглашаем на свадьбу</h1>
+            <div class="subhead">в гончарную мастерскую</div>
+            <div class="date-badge">26 · 12 · 2026</div>
+            <div class="names">Вера <span class="amp">&amp;</span> Лёша</div>
+
+            <!-- ТАЙМЕР -->
+            <div class="countdown-wrapper">
+                <div class="countdown-title">До нашего праздника осталось:</div>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">--</div>
+                        <div class="countdown-label">дней</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">--</div>
+                        <div class="countdown-label">часов</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">--</div>
+                        <div class="countdown-label">минут</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">--</div>
+                        <div class="countdown-label">секунд</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ВОЛНА ПО НИЗУ ХЕДЕРА -->
+        <div class="hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="waveGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#f9f3ea" stop-opacity="0"/>
+                        <stop offset="100%" stop-color="#f9f3ea" stop-opacity="1"/>
+                    </linearGradient>
+                </defs>
+                <path d="M0,70 C180,110 360,20 540,45 C720,70 900,110 1080,85 C1260,60 1380,35 1440,55 L1440,120 L0,120 Z"
+                      fill="url(#waveGrad)"/>
+                <path d="M0,85 C180,115 360,45 540,60 C720,75 900,110 1080,90 C1260,70 1380,55 1440,70 L1440,120 L0,120 Z"
+                      fill="#f9f3ea"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ПРИГЛАШЕНИЕ -->
+    <section class="section-fade">
+        <div class="container">
+            <div class="invite-text">
+                <p>Дорогие друзья и близкие!</p>
+                <p>В этот зимний день мы станем семьёй. Будем счастливы разделить с вами тепло нашего праздника — тёплый, творческий вечер в гончарной мастерской, где каждый сможет создать что-то своими руками и стать частью нашей истории.</p>
+                <p>Ждём вас <strong>26 декабря 2026 года</strong>. Начало в 12:00.</p>
+                <div class="signature">С любовью, Вера и Лёша</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЛАЙДЕР -->
+    <section class="section-fade" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title">Примеры для вдохновения</h2>
+            <div class="gallery-slider" id="gallerySlider">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=80" alt="Лепка из глины в мастерской — пример 1">
+                        <div class="slide-caption">Глиняные тарелки ручной работы</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=80" alt="Лепка из глины в мастерской — пример 2">
+                        <div class="slide-caption">Кружки и пиалы для чая</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&w=1200&q=80" alt="Лепка из глины в мастерской — пример 3">
+                        <div class="slide-caption">Фигурки и миниатюры</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=80" alt="Лепка из глины в мастерской — пример 4">
+                        <div class="slide-caption">Вазы и подсвечники</div>
+                    </div>
+                </div>
+
+                <button class="slider-btn prev" id="sliderPrev" aria-label="Предыдущий слайд">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next" id="sliderNext" aria-label="Следующий слайд">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="slider-dots" id="sliderDots">
+                <button class="slider-dot active" data-index="0" aria-label="Слайд 1"></button>
+                <button class="slider-dot" data-index="1" aria-label="Слайд 2"></button>
+                <button class="slider-dot" data-index="2" aria-label="Слайд 3"></button>
+                <button class="slider-dot" data-index="3" aria-label="Слайд 4"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ДЕТАЛИ -->
+    <section class="section-fade alt-bg" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title">Детали</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-map-pin"></i>
+                    <h3>Место</h3>
+                    <p>Гончарная мастерская «Тёплый ком»<br>г. Москва, ул. Гончарная, д. 12 (вход со двора)</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Время</h3>
+                    <p>Сбор гостей в 12:00<br>Начало в 12:10</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Формат</h3>
+                    <p>Творческий вечер с мастер-классом. Будем лепить из глины, пить глинтвейн и радоваться.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРОГРАММА -->
+    <section class="section-fade" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title">Программа дня</h2>
+            <div class="program-wrapper">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:00</div>
+                        <div class="timeline-text">Сбор гостей</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:10</div>
+                        <div class="timeline-text">Мастер-класс по лепке</div>
+                    </div>
+                    <div class="timeline-item highlight">
+                        <div class="timeline-time">14:00</div>
+                        <div class="timeline-text">Кое-что неожиданное 🎉</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:30</div>
+                        <div class="timeline-text">Фуршет</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">16:30</div>
+                        <div class="timeline-text">Завершение праздника</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРИМЕЧАНИЯ -->
+    <section class="section-fade alt-bg2" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title">Примечания</h2>
+            <div class="notes-grid">
+
+                <div class="note-card">
+                    <i class="fas fa-tshirt note-icon"></i>
+                    <h3>Дресс-код</h3>
+                    <div class="dress-value">Свободный</div>
+                    <p>Будем рады видеть вас в удобной одежде, в которой можно творить. В мастерской прохладно зимой — захватите что-то тёплое.</p>
+                </div>
+
+                <div class="note-card">
+                    <i class="fas fa-seedling note-icon"></i>
+                    <h3>Цветы</h3>
+                    <div class="flowers-ban">ЗАПРЕТ на срезанные цветы</div>
+                    <p>Ваше присутствие для нас главное. Если хочется добавить знак внимания вместо букета, мы собрали несколько идей ниже.</p>
+
+                    <div class="alt-title">Чем заменить цветы</div>
+                    <ul class="alt-list">
+                        <li>Письмо-воспоминание с фирменным рецептом и фотографией</li>
+                        <li>Герань в горшке, самая ароматная</li>
+                        <li>Подарочная карта для дома</li>
+                        <li>Набор орехов</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- КАРТА -->
+    <section class="section-fade" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title">Как добраться</h2>
+            <div class="map-wrapper">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.648533%2C55.738665&z=16&pt=37.648533,55.738665,pm2rdm" width="100%" height="400" frameborder="0" allowfullscreen="true" style="border:0; display:block;"></iframe>
+            </div>
+            <p style="text-align: center; margin-top: 18px; font-size: 1.1rem; color: #6b4a2e;">
+                <i class="fas fa-location-dot" style="margin-right: 8px;"></i>Гончарная мастерская «Тёплый ком» · ул. Гончарная, 12
+            </p>
+        </div>
+    </section>
+
+    <!-- ОПРОС -->
+    <section style="padding-top: 20px;">
+        <div class="container">
+            <div class="survey-section">
+                <h2>Подтвердите присутствие</h2>
+                <p>Пожалуйста, ответьте на несколько вопросов, чтобы мы могли всё организовать наилучшим образом. Это займёт не больше минуты.</p>
+                <!-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШУ GOOGLE ФОРМУ -->
+                <a href="https://forms.google.com/ВАША_ССЫЛКА_НА_ФОРМУ" class="btn-survey" target="_blank" rel="noopener noreferrer">
+                    Заполнить форму <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="survey-note">
+                    <i class="fas fa-lock" style="margin-right: 6px;"></i>Ссылка ведёт на Google Forms. Пожалуйста, заполните до 15 декабря 2026.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer>
+        <div class="container">
+            <p>С любовью, Вера и Лёша <i class="fas fa-heart"></i></p>
+            <p style="margin-top: 12px; font-size: 0.9rem; opacity: 0.8;">26 декабря 2026 · гончарная мастерская «Тёплый ком»</p>
+        </div>
+    </footer>
+
+    <!-- СКРИПТ ТАЙМЕРА -->
+    <script>
+        (function () {
+            var weddingDate = new Date(2026, 11, 26, 12, 0, 0).getTime();
+
+            var daysEl = document.getElementById('days');
+            var hoursEl = document.getElementById('hours');
+            var minutesEl = document.getElementById('minutes');
+            var secondsEl = document.getElementById('seconds');
+            var countdownEl = document.getElementById('countdown');
+
+            function pad(num) {
+                return num < 10 ? '0' + num : num;
+            }
+
+            function updateCountdown() {
+                var now = new Date().getTime();
+                var distance = weddingDate - now;
+
+                if (distance <= 0) {
+                    countdownEl.innerHTML = '<div class="countdown-finished">Вера и Лёша поженились! ❤️</div>';
+                    clearInterval(timerInterval);
+                    return;
+                }
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                daysEl.textContent = pad(days);
+                hoursEl.textContent = pad(hours);
+                minutesEl.textContent = pad(minutes);
+                secondsEl.textContent = pad(seconds);
+            }
+
+            updateCountdown();
+            var timerInterval = setInterval(updateCountdown, 1000);
+        })();
+    </script>
+
+    <!-- СКРИПТ СЛАЙДЕРА -->
+    <script>
+        (function () {
+            var track = document.getElementById('sliderTrack');
+            var prevBtn = document.getElementById('sliderPrev');
+            var nextBtn = document.getElementById('sliderNext');
+            var dots = document.querySelectorAll('.slider-dot');
+            var slides = track.querySelectorAll('.slide');
+            var total = slides.length;
+            var current = 0;
+
+            function goTo(index) {
+                if (index < 0) index = total - 1;
+                if (index >= total) index = 0;
+                current = index;
+                track.scrollTo({
+                    left: track.clientWidth * current,
+                    behavior: 'smooth'
+                });
+                updateDots();
+            }
+
+            function updateDots() {
+                dots.forEach(function (dot, i) {
+                    dot.classList.toggle('active', i === current);
+                });
+            }
+
+            prevBtn.addEventListener('click', function () { goTo(current - 1); });
+            nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+            dots.forEach(function (dot) {
+                dot.addEventListener('click', function () {
+                    goTo(parseInt(dot.getAttribute('data-index'), 10));
+                });
+            });
+
+            var scrollTimeout;
+            track.addEventListener('scroll', function () {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function () {
+                    var index = Math.round(track.scrollLeft / track.clientWidth);
+                    if (index !== current && index >= 0 && index < total) {
+                        current = index;
+                        updateDots();
+                    }
+                }, 100);
+            });
+
+            var autoplay = setInterval(function () {
+                goTo(current + 1);
+            }, 6000);
+
+            var sliderEl = document.querySelector('.gallery-slider');
+            sliderEl.addEventListener('mouseenter', function () { clearInterval(autoplay); });
+            sliderEl.addEventListener('touchstart', function () { clearInterval(autoplay); }, { passive: true });
+
+            window.addEventListener('resize', function () {
+                track.scrollTo({ left: track.clientWidth * current, behavior: 'auto' });
+            });
+        })();
+    </script>
+
+    <!-- СКРИПТ ПАРАЛЛАКСА -->
+    <script>
+        (function () {
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var isMobile = window.matchMedia('(max-width: 700px)').matches;
+            if (reduceMotion || isMobile) return;
+
+            var heroBg = document.getElementById('heroBg');
+            var blob1 = document.getElementById('blob1');
+            var blob2 = document.getElementById('blob2');
+            var blob3 = document.getElementById('blob3');
+            var gallery = document.getElementById('gallerySlider');
+
+            var heroEl = document.querySelector('.hero');
+            var gallerySection = gallery ? gallery.closest('section') : null;
+
+            var ticking = false;
+
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function () {
+                        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+                        if (heroEl) {
+                            var heroRect = heroEl.getBoundingClientRect();
+                            if (heroRect.bottom > 0) {
+                                heroBg.style.transform = 'translate3d(0, ' + (scrollY * 0.35) + 'px, 0)';
+                                if (blob1) blob1.style.transform = 'translate3d(0, ' + (scrollY * 0.55) + 'px, 0)';
+                                if (blob2) blob2.style.transform = 'translate3d(0, ' + (scrollY * 0.2) + 'px, 0)';
+                                if (blob3) blob3.style.transform = 'translate3d(0, ' + (scrollY * 0.42) + 'px, 0)';
+                            }
+                        }
+
+                        if (gallery && gallerySection) {
+                            var rect = gallery.getBoundingClientRect();
+                            var windowH = window.innerHeight || document.documentElement.clientHeight;
+                            if (rect.top < windowH && rect.bottom > 0) {
+                                var progress = (windowH - rect.top) / (windowH + rect.height);
+                                var offset = (progress - 0.5) * 40;
+                                gallery.style.transform = 'translate3d(0, ' + offset + 'px, 0)';
+                            }
+                        }
+
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
+
+</body>
+</html>
